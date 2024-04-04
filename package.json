@@ -10,7 +10,7 @@
   },
   "files": [
     "index.js",
-    "template-minimalist",    
+    "template-minimalist",
     "dist"
   ],
   "scripts": {
