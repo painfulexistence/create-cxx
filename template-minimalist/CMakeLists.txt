@@ -14,4 +14,5 @@ project(my-cxx-project)
 find_package(fmt CONFIG REQUIRED)
 
 add_executable(main src/main.cpp)
+set_property(TARGET main PROPERTY CXX_STANDARD 20)
 target_link_libraries(main PRIVATE fmt::fmt)
