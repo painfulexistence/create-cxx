@@ -1,0 +1,31 @@
+{
+  "name": "create-cxx",
+  "version": "0.1.6",
+  "type": "module",
+  "license": "MIT",
+  "author": "Loïc Chen",
+  "bin": {
+    "create-cxx": "index.js",
+    "cxx": "index.js"
+  },
+  "files": [
+    "index.js",
+    "template-*",
+    "dist"
+  ],
+  "scripts": {
+    "dev": "unbuild --stub",
+    "build": "unbuild"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@types/bun": "latest",
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "cross-spawn": "^7.0.3",
+    "unbuild": "^2.0.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
