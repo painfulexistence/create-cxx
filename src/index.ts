@@ -22,7 +22,7 @@ async function run() {
     fs.mkdirSync(projectDir, { recursive: true });
 
     // Copy the chosen template
-    const templateDir = path.resolve(cwd, `template-${template}`);
+    const templateDir = path.resolve(__dirname, "..", `template-${template}`);
     fs.cpSync(templateDir, projectDir, { recursive: true });
 
     // Rename dotfiles
@@ -45,10 +45,13 @@ async function run() {
     // Closing message
     console.log(chalk.green("Done! ") + " Now run: \n");
     console.log(`cd ${projectName}`);
+    console.log("git init");
+    console.log("git submodule add https://github.com/microsoft/vcpkg.git && ./vcpkg/bootstrap-vcpkg.sh")
     console.log("cmake -S . -B build");
     console.log();
 
-    spawn.sync("git", ["init"], { stdio: "inherit" });
+    //spawn.sync("cd", [projectName], { stdio: "inherit" });
+    //spawn.sync("git", ["init"], { stdio: "inherit" });
     //spawn.sync("cmake", ["-S .", "-B build"], { stdio: "inherit" });
 }
 
