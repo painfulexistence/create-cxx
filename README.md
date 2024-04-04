@@ -1,11 +1,12 @@
-# Create Cxx
+# create-cxx
+[![Build](https://github.com/painfulexistence/create-cxx/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/painfulexistence/create-cxx/actions/workflows/ci.yml)
 
 To use:
 
 ```bash
-bunx create-cxx
+npx create-cxx
 ```
 or
 ```bash
-bun create cxx
+npm create cxx
 ```
