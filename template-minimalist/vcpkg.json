@@ -1,6 +1,6 @@
 {
-  "name": "my-cxx-project",
-  "version": "0.1.0",
+  "name": "",
+  "version": "",
   "dependencies": [
     "fmt"
   ]
