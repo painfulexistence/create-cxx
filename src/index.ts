@@ -46,7 +46,7 @@ async function run() {
     console.log(chalk.green("Done! ") + " Now run: \n");
     console.log(`cd ${projectName}`);
     console.log("git init");
-    console.log("git submodule add https://github.com/microsoft/vcpkg.git && ./vcpkg/bootstrap-vcpkg.sh")
+    console.log("git submodule add https://github.com/microsoft/vcpkg.git && ./vcpkg/bootstrap-vcpkg.sh -disableMetrics")
     console.log("cmake -S . -B build");
     console.log();
 
