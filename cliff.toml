@@ -1,0 +1,20 @@
+[bump]
+features_always_bump_minor = false
+breaking_always_bump_major = true
+
+[git]
+conventional_commits = true
+filter_unconventional = true
+split_commits = false
+
+[changelog]
+header = """
+# Changelog\n
+"""
+body = """
+"""
+footer = """
+"""
+trim = true
+postprocessors = [
+]
