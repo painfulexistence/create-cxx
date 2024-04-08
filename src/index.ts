@@ -1,19 +1,66 @@
 import fs from "fs";
 import path from "path";
 import { program } from "commander";
+import { input, confirm, select } from '@inquirer/prompts';
 import chalk from "chalk";
 import spawn from "cross-spawn";
 
+const projectTemplateList = [
+    "minimalist",
+    "raylib"
+]
+const defaultProjectName = "my-cxx-project";
+const defaultProjectVersion = "0.1.0";
+const defaultProjectTemplate = projectTemplateList[0];
+
 program
     .argument("[project-name]", "CXX project name")
-    .option("-t, --template <template-name>", "CXX project template", "minimalist");
+    .argument("[project-version]", "CXX project version")
+    .option("-t, --template <template-name>", "CXX project template");
 program.parse();
 
-const defaultProjectName = "my-cxx-project";
 const cwd = process.cwd();
-const projectName = program.args[0] || defaultProjectName;
-const projectVersion = "0.1.0";
-const { template } = program.opts();
+const args = program.args;
+const opts = program.opts();
+const initProjectName = args[0];
+const initProjectVersion = args[1];
+const initTemplate = opts.template;
+
+interface ProjectInfo {
+    projectName: string,
+    projectVersion: string,
+    template: string
+}
+async function getProjectInfo(): Promise<ProjectInfo> {
+    const result = {
+        projectName: initProjectName,
+        projectVersion: initProjectVersion,
+        template: initTemplate,
+    }
+    if (!result.projectName) {
+        result.projectName = await input({
+            message: `Project name?`,
+            default: defaultProjectName,
+            validate: (value: string) => true
+        })
+    }
+    if (!result.projectVersion) {
+        result.projectVersion = await input({
+            message: `Project version?`,
+            default: defaultProjectVersion,
+            validate: (value: string) => true
+        })
+    }
+    if (!result.template) {
+        result.template = await select({
+            message: `Project template?`,
+            default: defaultProjectTemplate,
+            choices: projectTemplateList.map(tn => ({ value: tn })),
+            loop: true
+        })
+    }
+    return result;
+}
 
 function updateCmakeProjectDesc(filePath: string, name: string, version: string) {
     const text = fs.readFileSync(filePath, "utf-8");
@@ -35,7 +82,7 @@ function updateVcpkgProjectDesc(filePath: string, name: string, version: string)
 }
 
 async function run() {
-    // TODO: Use Inquirer to prompt users
+    const { projectName, projectVersion, template } = await getProjectInfo();
 
     // Create project directory
     const projectDir = path.join(cwd, projectName);
