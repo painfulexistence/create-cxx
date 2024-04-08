@@ -23,10 +23,15 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 project()
 
 find_package(fmt CONFIG REQUIRED)
-find_package(raylib CONFIG REQUIRED)
+include(FetchContent)
+FetchContent_Declare(
+    raylib
+    GIT_REPOSITORY https://github.com/raysan5/raylib.git
+    GIT_TAG 5.0
+)
+FetchContent_MakeAvailable(raylib)
 
 add_executable(main src/main.cpp)
 target_compile_features(main PRIVATE cxx_std_20)
 set_target_properties(main PROPERTIES CXX_EXTENSIONS OFF)
-target_include_directories(main PRIVATE ${raylib_INCLUDE_DIRS})
-target_link_libraries(main PRIVATE fmt::fmt raylib ${raylib_LIBRARIES})
+target_link_libraries(main PRIVATE fmt::fmt raylib)
