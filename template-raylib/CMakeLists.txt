@@ -23,8 +23,10 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 project()
 
 find_package(fmt CONFIG REQUIRED)
+find_package(raylib CONFIG REQUIRED)
 
 add_executable(main src/main.cpp)
 target_compile_features(main PRIVATE cxx_std_20)
 set_target_properties(main PROPERTIES CXX_EXTENSIONS OFF)
-target_link_libraries(main PRIVATE fmt::fmt)
+target_include_directories(main PRIVATE ${raylib_INCLUDE_DIRS})
+target_link_libraries(main PRIVATE fmt::fmt raylib ${raylib_LIBRARIES})
