@@ -1,9 +1,10 @@
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 import { program } from "commander";
-import { input, confirm, select } from "@inquirer/prompts";
-import chalk from "chalk";
-import spawn from "cross-spawn";
+import { input, select } from "@inquirer/prompts";
+import { green, yellow, blue } from "ansicolor";
+import { execSync } from "child_process";
 
 const projectTemplateList = ["minimalist", "raylib"];
 const defaultProjectName = "my-cxx-project";
@@ -17,6 +18,9 @@ program
 program.parse();
 
 const cwd = process.cwd();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const args = program.args;
 const opts = program.opts();
 const initProjectName = args[0];
@@ -123,19 +127,21 @@ async function run() {
     const vcpkgFilePath = path.join(projectDir, "vcpkg.json");
     updateVcpkgProjectDesc(vcpkgFilePath, projectName, projectVersion);
 
-    // Closing message
-    console.log(chalk.green("Done! ") + " Now run: \n");
-    console.log(`cd ${projectName}`);
-    console.log("git init");
-    console.log(
-        "git submodule add https://github.com/microsoft/vcpkg.git && ./vcpkg/bootstrap-vcpkg.sh -disableMetrics"
-    );
-    console.log("cmake -S . -B build");
-    console.log();
+    // Execute commands
+    execSync(`cd ${projectName} && git init`, { stdio: "inherit" });
+    // execSync(`cd ${projectName} && git submodule add https://github.com/microsoft/vcpkg.git && ./vcpkg/bootstrap-vcpkg.sh -disableMetrics`, { stdio: "inherit" });
+    // execSync(`cd ${projectName} && cmake -S. -Bbuild`, { stdio: "inherit" });
 
-    //spawn.sync("cd", [projectName], { stdio: "inherit" });
-    //spawn.sync("git", ["init"], { stdio: "inherit" });
-    //spawn.sync("cmake", ["-S .", "-B build"], { stdio: "inherit" });
+    // Show closing message
+    console.log(green("Done!") + " " + yellow("Now run:") + "\n");
+    console.log(blue(`cd ${projectName}`));
+    console.log(
+        blue(
+            `git submodule add https://github.com/microsoft/vcpkg.git && ./vcpkg/bootstrap-vcpkg.sh -disableMetrics`
+        )
+    );
+    console.log(blue("cmake -S . -B build"));
+    console.log();
 }
 
 run().catch((e) => {
