@@ -1,0 +1,9 @@
+*.md
+*.yml
+*.toml
+.prettierrc
+.editorconfig
+
+template-*/
+.github/
+.devcontainer

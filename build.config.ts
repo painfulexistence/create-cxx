@@ -14,7 +14,7 @@ export default defineBuildConfig({
                 nodeResolver({
                     exportConditions: ["node"]
                 })
-            ]
+            ];
         }
     }
-})
+});
