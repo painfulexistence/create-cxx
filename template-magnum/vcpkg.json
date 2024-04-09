@@ -1,0 +1,9 @@
+{
+  "name": "",
+  "version": "",
+  "dependencies": [
+    "fmt",
+    "magnum",
+    "box2d"
+  ]
+}
