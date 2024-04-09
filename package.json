@@ -24,6 +24,7 @@
     "index.js",
     "template-minimalist",
     "template-raylib",
+    "template-magnum",
     "dist"
   ],
   "scripts": {
