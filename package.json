@@ -25,6 +25,7 @@
     "template-minimalist",
     "template-raylib",
     "template-magnum",
+    "template-sfml",
     "dist"
   ],
   "scripts": {

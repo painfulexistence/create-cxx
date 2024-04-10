@@ -1,0 +1,22 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "ninja-build",
+      "generator": "Ninja Multi-Config",
+      "binaryDir": "${sourceDir}/build"
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "debug",
+      "configurePreset": "ninja-build",
+      "configuration": "Debug"
+    },
+    {
+      "name": "release",
+      "configurePreset": "ninja-build",
+      "configuration": "Release"
+    }
+  ]
+}
