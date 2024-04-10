@@ -22,14 +22,16 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 project()
 
-find_package(fmt CONFIG REQUIRED)
+set(FETCHCONTENT_QUIET FALSE)
 include(FetchContent)
 FetchContent_Declare(
     raylib
     GIT_REPOSITORY https://github.com/raysan5/raylib.git
     GIT_TAG 5.0
+    GIT_PROGRESS TRUE
 )
 FetchContent_MakeAvailable(raylib)
+find_package(fmt CONFIG REQUIRED)
 
 set(SOURCES
     src/main.cpp
