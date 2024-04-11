@@ -1,6 +1,6 @@
 {
   "name": "create-cxx",
-  "version": "0.1.24",
+  "version": "0.1.25",
   "type": "module",
   "license": "MIT",
   "author": "Loïc Chen",
@@ -14,7 +14,12 @@
     "cmake",
     "vcpkg",
     "node",
-    "bun"
+    "bun",
+    "raylib",
+    "magnum",
+    "sfml",
+    "sdl2",
+    "sdl3"
   ],
   "bin": {
     "create-cxx": "index.js",
