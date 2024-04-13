@@ -1,5 +1,8 @@
-# Based on https://raw.githubusercontent.com/github/gitignore/main/Node.gitignore
+package-lock.json
+yarn.lock
+bun.lockb
 
+# Based on https://raw.githubusercontent.com/github/gitignore/main/Node.gitignore
 # Logs
 
 logs
