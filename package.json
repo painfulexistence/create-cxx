@@ -27,12 +27,7 @@
   },
   "files": [
     "index.js",
-    "template-minimalist",
-    "template-raylib",
-    "template-magnum",
-    "template-sfml",
-    "template-sdl2",
-    "template-sdl3",
+    "templates",
     "dist"
   ],
   "scripts": {

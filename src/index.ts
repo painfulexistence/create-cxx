@@ -101,7 +101,7 @@ async function run() {
     fs.mkdirSync(projectDir, { recursive: true });
 
     // Copy the chosen template
-    const templateDir = path.resolve(__dirname, "..", `template-${template}`);
+    const templateDir = path.resolve(__dirname, "..", "templates", template);
     fs.cpSync(templateDir, projectDir, { recursive: true });
 
     // Rename dotfiles
