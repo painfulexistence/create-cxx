@@ -32,7 +32,7 @@
   ],
   "scripts": {
     "dev": "unbuild --stub",
-    "build": "unbuild",
+    "build": "unbuild --minify",
     "prettier": "bunx prettier . --write",
     "version": "npm version $(git cliff --bumped-version)",
     "prepublishOnly": "bun run build"
