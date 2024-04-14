@@ -19,7 +19,8 @@
     "magnum",
     "sfml",
     "sdl2",
-    "sdl3"
+    "sdl3",
+    "libtcod"
   ],
   "bin": {
     "create-cxx": "index.js",

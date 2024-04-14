@@ -6,7 +6,7 @@ import { input, select } from "@inquirer/prompts";
 import { green, yellow, blue } from "ansicolor";
 import { execSync } from "child_process";
 
-const projectTemplateList = ["minimalist", "raylib", "magnum", "sfml", "sdl2", "sdl3"];
+const projectTemplateList = ["minimalist", "raylib", "magnum", "sfml", "sdl2", "sdl3", "libtcod"];
 const defaultProjectName = "my-cxx-project";
 const defaultProjectVersion = "0.1.0";
 const defaultProjectTemplate = projectTemplateList[0];
