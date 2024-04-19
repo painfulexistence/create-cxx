@@ -1,5 +1,7 @@
 <div align="center">
-<h1>☀️ Create CXX</h1> 
+<h1>☀️ Create CXX</h1>
+<img src=".github/demo.gif"></img>
+  
 <h6>Set up a modern C++ project blazingly fast!</h6>
 
 [![Build](https://github.com/painfulexistence/create-cxx/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/painfulexistence/create-cxx/actions/workflows/ci.yml) [![NPM License](https://img.shields.io/npm/l/create-cxx.svg?style=flat)](https://github.com/painfulexistence/create-cxx/blob/main/LICENSE) [![NPM Version](https://img.shields.io/npm/v/create-cxx.svg?style=flat)](https://www.npmjs.com/package/create-cxx)
