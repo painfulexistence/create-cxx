@@ -35,11 +35,12 @@
     "dev": "unbuild --stub",
     "build": "unbuild --minify",
     "prettier": "bunx prettier . --write",
-    "version": "npm version $(git cliff --bumped-version)",
-    "prepublishOnly": "bun run build"
+    "prepublishOnly": "bun run build",
+    "release": "release-it"
   },
   "devDependencies": {
     "@inquirer/prompts": "^4.3.2",
+    "@release-it/conventional-changelog": "^8.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/bun": "latest",
     "ansicolor": "^2.0.3",
