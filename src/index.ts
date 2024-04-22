@@ -133,7 +133,8 @@ async function run() {
     // execSync(`cd ${projectName} && cmake -S. -Bbuild`, { stdio: "inherit" });
 
     // Show closing message
-    console.log(green("Done!") + " " + yellow("Now run:") + "\n");
+    console.log();
+    console.log(green("Done!") + " " + yellow("Now run:"));
     console.log(blue(`cd ${projectName}`));
     console.log(
         blue(
@@ -141,6 +142,10 @@ async function run() {
         )
     );
     console.log(blue("cmake -S . -B build"));
+    console.log();
+    console.log(yellow("Or if you've installed vcpkg:"));
+    console.log(blue(`cd ${projectName}`));
+    console.log(blue("cmake -S . -B build -DGLOBAL_VCPKG"));
     console.log();
 }
 

@@ -62,8 +62,8 @@ Require npx
 Set Shell "zsh"
 Set Theme "Nocturnal Winter"
 Set FontSize 28
-Set Width 1200
-Set Height 600
+Set Width 1280
+Set Height 720
 Set MarginFill "#C4F138"
 Set Margin 60
 Set WindowBar Colorful
