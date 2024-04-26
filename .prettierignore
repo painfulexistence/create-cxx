@@ -4,6 +4,6 @@
 .prettierrc
 .editorconfig
 
-template-*/
+templates/
 .github/
 .devcontainer

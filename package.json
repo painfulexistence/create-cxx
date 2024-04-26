@@ -34,7 +34,7 @@
   "scripts": {
     "dev": "unbuild --stub",
     "build": "unbuild --minify",
-    "prettier": "bunx prettier . --write",
+    "format": "bunx prettier . --write",
     "prepublishOnly": "bun run build",
     "release": "release-it"
   },

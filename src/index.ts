@@ -1,12 +1,20 @@
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { program } from "commander";
 import { input, select } from "@inquirer/prompts";
 import { green, yellow, blue } from "ansicolor";
-import { execSync } from "child_process";
+import { execSync } from "node:child_process";
 
-const projectTemplateList = ["minimalist", "raylib", "magnum", "sfml", "sdl2", "sdl3", "libtcod"];
+const projectTemplateList = [
+    "minimalist",
+    "raylib",
+    "magnum",
+    "sfml",
+    "sdl2",
+    "sdl3",
+    "libtcod"
+];
 const defaultProjectName = "my-cxx-project";
 const defaultProjectVersion = "0.1.0";
 const defaultProjectTemplate = projectTemplateList[0];
@@ -114,7 +122,7 @@ async function run() {
     dotfiles.map((filename) => {
         const [oldPath, newPath] = [
             path.join(projectDir, filename),
-            path.join(projectDir, "." + filename)
+            path.join(projectDir, `.${filename}`)
         ];
         if (fs.existsSync(oldPath)) {
             fs.renameSync(oldPath, newPath);
@@ -134,11 +142,11 @@ async function run() {
 
     // Show closing message
     console.log();
-    console.log(green("Done!") + " " + yellow("Now run:"));
+    console.log(green("Done! ") + yellow("Now run:"));
     console.log(blue(`cd ${projectName}`));
     console.log(
         blue(
-            `git submodule add https://github.com/microsoft/vcpkg.git && ./vcpkg/bootstrap-vcpkg.sh -disableMetrics`
+            "git submodule add https://github.com/microsoft/vcpkg.git && ./vcpkg/bootstrap-vcpkg.sh -disableMetrics"
         )
     );
     console.log(blue("cmake -S . -B build"));
