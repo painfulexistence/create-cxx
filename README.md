@@ -9,12 +9,24 @@
 
 This is a Node.js script that can help you quickly spin up a new C++ project with a basic structure and essential files <br/>
 
+## Prerequisites
+Make sure you have either of the following installed:
+- [Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)
+- [Bun](https://bun.sh/)
+
 ## Usage
+Depending on your available JavaScript package managers, you can use one of the following commands:
 #### NPM
 ```bash
 npm create cxx $PROJECT_NAME
 # or
 npx create-cxx $PROJECT_NAME
+```
+#### Yarn
+```bash
+yarn create cxx $PROJECT_NAME
+# or
+yarn dlx create-cxx $PROJECT_NAME
 ```
 #### PNPM
 ```bash
@@ -29,5 +41,13 @@ bun create cxx $PROJECT_NAME
 bunx create-cxx $PROJECT_NAME
 ```
 
+## Features
+- [x] Interactive prompts guide you through setting up new projects
+- [x] Choose from a handful of templates
+- [x] CMake and vcpkg ready
+- [x] Do everything via CLI, eliminating the need to copy templates from GitHub
+- [x] Easy installation and use
+
 ## Contributing
-The project leverages <a href="https://bun.sh/">Bun</a>, so ensure Bun is installed before proceeding
+The project leverages <a href="https://bun.sh/">Bun</a>, so ensure Bun is installed before proceeding.
+Any contributions are welcome!
