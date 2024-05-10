@@ -3,10 +3,10 @@
   "configurePresets": [
     {
       "name": "dev",
-      "inherits": "dev-local-vcpkg",
+      "inherits": ["ninja-local-vcpkg"],
       "cacheVariables": {
         "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
-        "CXX_COMPILTER_LAUNCHER": "ccache"
+        "CMAKE_CXX_COMPILER_LAUNCHER": "ccache"
       }
     }
   ],

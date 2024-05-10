@@ -16,13 +16,13 @@
       }
     },
     {
-      "name": "dev-local-vcpkg",
+      "name": "ninja-local-vcpkg",
       "generator": "Ninja Multi-Config",
       "binaryDir": "${sourceDir}/build",
       "inherits": ["local-vcpkg"]
     },
     {
-      "name": "dev-global-vcpkg",
+      "name": "ninja-global-vcpkg",
       "generator": "Ninja Multi-Config",
       "binaryDir": "${sourceDir}/build",
       "inherits": ["global-vcpkg"]
