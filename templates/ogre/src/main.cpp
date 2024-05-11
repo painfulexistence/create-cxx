@@ -4,7 +4,7 @@
 
 int main(int argc, char* args[]) {
     fmt::print("Hello from CXX!\n");
-    // OgreBites::ApplicationContext ctx("MyApp");
-    // ctx.initApp();
+    OgreBites::ApplicationContext ctx("MyApp");
+    ctx.initApp();
     return 0;
 }
