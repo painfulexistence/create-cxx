@@ -14,8 +14,7 @@
     {
       "name": "dev",
       "configurePreset": "dev",
-      "configuration": "Debug",
-      "jobs": 4
+      "configuration": "Debug"
     }
   ]
 }

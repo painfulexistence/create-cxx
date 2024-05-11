@@ -13,7 +13,8 @@ const projectTemplateList = [
     "sfml",
     "sdl2",
     "sdl3",
-    "libtcod"
+    "libtcod",
+    "ogre"
 ];
 const defaultProjectName = "my-cxx-project";
 const defaultProjectVersion = "0.1.0";

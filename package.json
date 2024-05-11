@@ -20,7 +20,8 @@
     "sfml",
     "sdl2",
     "sdl3",
-    "libtcod"
+    "libtcod",
+    "ogre"
   ],
   "bin": {
     "create-cxx": "index.js",
