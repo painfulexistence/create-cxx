@@ -150,12 +150,12 @@ async function run() {
             "git submodule add https://github.com/microsoft/vcpkg.git && ./vcpkg/bootstrap-vcpkg.sh -disableMetrics"
         )
     );
-    console.log(blue("cmake -S . -B build"));
+    console.log(blue("cmake --preset=dev"));
     console.log();
-    console.log(yellow("Or if you've installed vcpkg:"));
-    console.log(blue(`cd ${projectName}`));
-    console.log(blue("cmake -S . -B build -DGLOBAL_VCPKG"));
-    console.log();
+    // console.log(yellow("Or if you've installed vcpkg:"));
+    // console.log(blue(`cd ${projectName}`));
+    // console.log(blue("cmake -S . -B build -DGLOBAL_VCPKG"));
+    // console.log();
 }
 
 run().catch((e) => {

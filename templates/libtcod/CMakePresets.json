@@ -16,6 +16,15 @@
       }
     },
     {
+      "name": "emscripten",
+      "hidden": true,
+      "cacheVariables": {
+        "EMSCRIPTEN": "ON",
+        "VCPKG_CHAINLOAD_TOOLCHAIN_FILE": "$env{EMSDK}/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake",
+        "VCPKG_TARGET_TRIPLET": "wasm32-emscripten"
+      }
+    },
+    {
       "name": "ninja-local-vcpkg",
       "generator": "Ninja Multi-Config",
       "binaryDir": "${sourceDir}/build",
@@ -26,6 +35,18 @@
       "generator": "Ninja Multi-Config",
       "binaryDir": "${sourceDir}/build",
       "inherits": ["global-vcpkg"]
+    },
+    {
+      "name": "ninja-local-vcpkg-emscripten",
+      "generator": "Ninja Multi-Config",
+      "binaryDir": "${sourceDir}/build",
+      "inherits": ["local-vcpkg", "emscripten"]
+    },
+    {
+      "name": "ninja-global-vcpkg-emscripten",
+      "generator": "Ninja Multi-Config",
+      "binaryDir": "${sourceDir}/build",
+      "inherits": ["global-vcpkg", "emscripten"]
     }
   ]
 }
