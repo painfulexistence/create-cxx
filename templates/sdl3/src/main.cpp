@@ -1,10 +1,10 @@
 #include "fmt/core.h"
-#include "SDL.h"
+#include "SDL3/SDL.h"
 
 int main(int argc, char* args[]) {
     fmt::print("Hello from CXX!\n");
 
-    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+    if (!SDL_Init(SDL_INIT_VIDEO)) {
         fmt::print("SDL could not initialize! Error: {}\n", SDL_GetError());
         return 1;
     }
@@ -14,7 +14,7 @@ int main(int argc, char* args[]) {
         450,
         0
     );
-    SDL_Renderer* renderer = SDL_CreateRenderer(window, NULL, 0);
+    SDL_Renderer* renderer = SDL_CreateRenderer(window, NULL);
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
 
     bool quit = false;
