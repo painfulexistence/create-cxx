@@ -9,7 +9,7 @@ include(FetchContent)
 FetchContent_Declare(SDL3
     GIT_REPOSITORY https://github.com/libsdl-org/SDL.git
     # TODO: Update to stable version when it comes out
-    GIT_TAG prerelease-3.1.1
+    GIT_TAG preview-3.1.3
     GIT_PROGRESS TRUE)
 FetchContent_MakeAvailable(SDL3)
 find_package(fmt CONFIG REQUIRED)
